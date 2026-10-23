@@ -111,6 +111,136 @@
       the exhaust system <a href="https://iopscience.iop.org/article/10.1088/1757-899X/671/1/012134/pdf">(Murtdha S. Imran and Hasan T. Hashim, 2020)</a>. On the other hand, EVs don’t produce nearly as much heat via 
       their electric motors, which allows them to use much more of the energy from the grid because less is lost as heat.
       This makes EVs far more efficient on paper.
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Car Energy Losses</title>
+
+    <!-- Import Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            padding: 30px;
+        }
+
+        h1 {
+            color: #243b55;
+        }
+
+        p {
+            color: #555;
+        }
+
+        .chart-container {
+            width: 90%;
+            max-width: 650px;
+            margin: 30px auto;
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Car Energy Losses</h1>
+
+    <p>
+        How the energy supplied to a car engine is distributed.
+    </p>
+
+    <div class="chart-container">
+        <canvas id="energyChart"></canvas>
+    </div>
+
+    <script>
+        // Energy loss data from the image.
+        // Midpoints are used for percentage ranges.
+
+        const labels = [
+            "Engine losses",
+            "Auxiliary electrical losses",
+            "Parasitic losses",
+            "Energy delivered to wheels",
+            "Drivetrain losses"
+        ];
+
+        const values = [
+            70,    // Engine losses: 68–72%
+            1,     // Auxiliary electrical losses: 0–2%
+            5,     // Parasitic losses: 4–6%
+            20.5,  // Energy to wheels: 16–25%
+            4      // Drivetrain losses: 3–5%
+        ];
+
+        const ctx = document.getElementById("energyChart");
+
+        new Chart(ctx, {
+            type: "pie",
+
+            data: {
+                labels: labels,
+
+                datasets: [{
+                    label: "Percentage (%)",
+                    data: values,
+
+                    backgroundColor: [
+                        "#e74c3c",
+                        "#f39c12",
+                        "#8e44ad",
+                        "#27ae60",
+                        "#3498db"
+                    ],
+
+                    borderColor: "#ffffff",
+                    borderWidth: 3
+                }]
+            },
+
+            options: {
+                responsive: true,
+
+                plugins: {
+                    legend: {
+                        position: "bottom"
+                    },
+
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                return context.label + ": "
+                                    + context.raw + "%";
+                            }
+                        }
+                    },
+
+                    title: {
+                        display: true,
+                        text: "Distribution of Energy (%)",
+                        font: {
+                            size: 18
+                        },
+                        padding: 20
+                    }
+                }
+            }
+        });
+    </script>
+
+</body>
+</html>
+
+
 
     <div id=”chart_div”></div>
   </p>
