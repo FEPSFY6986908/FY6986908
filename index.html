@@ -1,24 +1,4 @@
 <!DOCTYPE html>
-<script>
-function drawChart() {
-var data = google.visualization.arrayToDataTable([
-[‘Task’, ‘Hours per Day’],
-[‘Work’, 8],
-[‘Sleep’, 8],
-6 | P a g e
-ENG0018 Computer Laboratory Dr Alifah Rahman 2026
-Lab H3 (week 4) Introduction to JavaScript
-[‘Eat’, 2],
-[‘Study’, 4],
-[‘Exercise’, 2]
-]);
-var options = {
-title: ‘My Daily Activities’
-};
-var chart = new google.visualization.PieChart(document.getElementById(‘chart_div’));
-chart.draw(data, options);
-}
-</script>
 <head>
   <img src="university-of-surrey-logo.png" alt="Banner" width="1200" height="300"> 
   <h1><b>ENG0018 Computer Laboratory 2026/27</b></h1>
@@ -133,10 +113,6 @@ chart.draw(data, options);
       This makes EVs far more efficient on paper.
 
     <div id=”chart_div”></div>
-      <script type=”text/javascript”>
-        google.charts.load(‘current’, { ‘packages’ : [‘corechart’] });
-        google.charts.setOnLoadCallback(drawChart);
-      </script>
   </p>
 
 <h3 id="3. References">3. References</h3>
