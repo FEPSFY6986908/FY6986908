@@ -124,12 +124,13 @@
       google.charts.setOnLoadCallback(drawChart)
       function drawChart() {
           var data = google.visualization.arrayToDataTable([
-              ['Task', '100'],
-              ["Engine Losses", 70%],
-              ["Parasitic Losses", 5%],
-              ["Energy to Wheels", 18%],
-              ["Drivetrain losses", 4%],  
-              ["Idle Losses", 3%]
+              ["Task", 'Hours per Day'],
+              ["Engine Losses", 16.8],
+              ["Parasitic Losses", 1.2],
+              ["Energy to Wheels", 4.32],
+              ["Drivetrain losses", 0.96],  
+              ["Idle Losses", 0.48]
+
           ]);
       var options = {
       title: 'Energy Losses in ICE Vehicles'
@@ -138,9 +139,7 @@
       chart.draw(data, options);
       }
     </script>
-
     <div id="chart_div"></div>
-  
   </p>
 
 <h3 id="3. Video Presentation">3. Video Presentation</h3>
