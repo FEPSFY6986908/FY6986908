@@ -42,7 +42,12 @@
 
 <body style="background-color:#FFFFFF;margin-left:50px;">
 
+<head>
+  
+  <title>My Daily Activities</title>
+  <script type=”text/javascript” src=https://www.gstatic.com/charts/loader.js></script>
 
+</head>
 
 <table>
 
@@ -110,125 +115,27 @@
       their electric motors, which allows them to use much more of the energy from the grid because less is lost as heat.
       This makes EVs far more efficient on paper.
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Car Energy Losses</title>
-
-    <!-- Import Chart.js -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            text-align: left;
-            padding: 30px;
-        }
-
-        h1 {
-            color: #243b55;
-        }
-
-        p {
-            color: #555;
-        }
-
-        .chart-container {
-            width: 90%;
-            max-width: 350px;
-            margin: 30px auto;
-            background: white;
-            padding: 25px;
-            border-radius: 12px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        }
-    </style>
-</head>
-
-<body>
-
-    <div class="chart-container">
-        <canvas id="energyChart"></canvas>
-    </div>
-
-    <script>
-        // Energy loss data from the image.
-        // Midpoints are used for percentage ranges.
-
-        const labels = [
-            "Engine losses",
-            "Auxiliary electrical losses",
-            "Parasitic losses",
-            "Energy delivered to wheels",
-            "Drivetrain losses"
-        ];
-
-        const values = [
-            70,    // Engine losses: 68–72%
-            1,     // Auxiliary electrical losses: 0–2%
-            5,     // Parasitic losses: 4–6%
-            20.5,  // Energy to wheels: 16–25%
-            4      // Drivetrain losses: 3–5%
-        ];
-
-        const ctx = document.getElementById("energyChart");
-
-        new Chart(ctx, {
-            type: "pie",
-
-            data: {
-                labels: labels,
-
-                datasets: [{
-                    label: "Percentage (%)",
-                    data: values,
-
-                    backgroundColor: [
-                        "#e74c3c",
-                        "#f39c12",
-                        "#8e44ad",
-                        "#27ae60",
-                        "#3498db"
-                    ],
-
-                    borderColor: "#ffffff",
-                    borderWidth: 3
-                }]
-            },
-
-            options: {
-                responsive: true,
-
-                plugins: {
-                    legend: {
-                        position: "bottom"
-                    },
-
-                    tooltip: {
-                        callbacks: {
-                            label: function(context) {
-                                return context.label + ": "
-                                    + context.raw + "%";
-                            }
-                        }
-                    },
-
-                    title: {
-                        display: true,
-                        text: "Distribution of Energy (%)",
-                        font: {
-                            size: 18
-                        },
-                        padding: 20
-                    }
-                }
-            }
-        });
+    <div id="chart_div"></div>
+    <script type=”text/javascript”>
+      google.charts.load(‘current’, { ‘packages’ : [‘corechart’] });
+      google.charts.setOnLoadCallback(drawChart)
+      function drawChart() {
+          var data = google.visualization.arrayToDataTable([
+              [‘Task’, ‘Hours per Day’],
+              [‘Work’, 8],
+              [‘Sleep’, 8],
+              [‘Eat’, 2],
+              [‘Study’, 4],  
+              [‘Exercise’, 2]
+          ]);
+      var options = {
+      title: ‘My Daily Activities’
+      };
+      var chart = new google.visualization.PieChart(document.getElementById(‘chart_div’));
+      chart.draw(data, options);
+      }
     </script>
-
-</body>
+  
   </p>
 
 <h3 id="3. References">3. References</h3>
