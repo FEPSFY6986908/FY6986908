@@ -134,15 +134,16 @@
       function drawChart() {
           var data = google.visualization.arrayToDataTable([
               ["Task", 'Hours per Day'],
-              ["Engine Losses", 16.8],
-              ["Parasitic Losses", 1.2],
-              ["Energy to Wheels", 4.32],
-              ["Drivetrain losses", 0.96],  
-              ["Idle Losses", 0.48]
+              ["Engine Losses", 69],
+              ["Parasitic Losses", 5],
+              ["Energy to Wheels", 19],
+              ["Drivetrain losses", 4],  
+              ["Idle Losses", 3]
 
           ]);
       var options = {
       title: 'Energy Losses in ICE Vehicles'
+        pieSliceText: 'percentage'
       };
       var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
       chart.draw(data, options);
