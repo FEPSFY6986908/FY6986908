@@ -107,7 +107,7 @@
       The drivetrain of an EV is much simpler than that of a combustion engine, meaning it loses far less energy through friction.
       </p>
 
-      <p class="ex1" id="Analysis_InText">
+      <p class="ex1" id="Analysis_InText1">
       An even larger way an engine loses energy is through heat.
       In an internal combustion engine (ICE), fuel is burned to produce energy that turns the pistons, crankshaft, driveshaft, and eventually the wheels.
       However, having so many stages means that only 16–25% of the energy from the fuel reaches the wheels <a href="https://www.fueleconomy.gov/feg/atv.shtml">(J. Thomas, 2014, cited in US DOE, n.d.)</a>.
@@ -244,9 +244,10 @@ google.charts.setOnLoadCallback(drawChart);
    
     const IntroductionCount = displayWordCount('Introduction_InText');
     const AnalysisCount = displayWordCount('Analysis_InText');
+    const AnalysisCount1 = displayWordCount('Analysis_InText1');
     
     // Calculate the sum of all selected sections
-    const totalWordCount =IntroductionCount + AnalysisCount;
+    const totalWordCount =IntroductionCount + AnalysisCount + AnalysisCount1;
     // Display the total word count
     document.getElementById("totalWordCount").innerText = `Total word count: ${totalWordCount}`;
   }
