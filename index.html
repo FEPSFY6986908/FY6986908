@@ -74,17 +74,13 @@
 </table>
   
 <hr>
-  <p class="ex1">
-    This paper presents a novel adaptive active learning strategy. The most accurate classification model from a heterogeneous
-    classifier pool is selected at each learning epoch. Our goal is to achieve greater incremental improvement in accuracy, compared
-    to using a single type of classification model throughout the process. The strategy is evaluated on benchmark data sets.
-    We further consider an application to texture classification problems in sonar mosaic imagery and compare it with non-adaptive
-    active learning and traditional machine learning approaches. Our results show that... We conclude that..
-  </p>
-
+ 
 <h3 id="Abstract">Abstract</h3>
   <p class="ex1">
-    This is where my Abstract goes.
+   The “fewer moving parts” claim is true but incomplete. The EV drivetrain is simpler: torque is available from standstill, transmissions can be simpler,
+    and far more of the energy used reaches the wheels. But the EV also needs a battery thermal management system working within a narrow temperature window, 
+    and its heavy battery affects tyre wear and, plausibly, chassis design. Maintenance falls, while cost risk shifts to the battery. Complexity has moved rather 
+    than vanished. Lighter, longer-lasting batteries could shrink that trade-off in future, but for now engineers have swapped one set of challenges for another.
   </p>
   
 <h3 id="1. Introduction">1. Introduction</h3>
@@ -117,6 +113,28 @@
       This makes EVs far more efficient on paper.
 
     </p>
+  <p class="ex1" id="Analysis_InText2">
+    The EV’s biggest hidden complication is its battery. Lithium-ion cells work best at about 25–40°C, with the temperature difference between cells kept below
+    5°C (Yavuz, Arıcı and Nižetić, 2023), although the exact range varies between studies. The stakes are high: above roughly 80°C, thermal runaway can be
+    triggered, leading to fire or explosion (Liu et al., 2025). Most commercial EVs therefore use liquid-based thermal management, because liquids transfer heat
+    well and can both cool and heat the pack (He, Saini and Chen, 2022). Under the same energy usage, liquid cooling can keep the maximum battery temperature
+    about 3°C lower than air cooling (Liu et al., 2025). An EV may lack a traditional engine cooling system, but it needs a more precisely controlled one for 
+    its battery. This is the strongest evidence that fewer moving parts does not mean a simpler car.
+  </p>
+  <p class="ex1" id="Analysis_InText3">
+    Battery packs are heavy. Emissions Analytics, a specialist emissions-testing company, reports that testing suggests every extra 500 kg of vehicle weight,
+    about the weight of a large battery, raises tyre wear emissions by 21% (Autobiz.ie, 2023). The company has been reported as saying there is no evidence
+    that EVs emit more non-exhaust particles than other vehicles, because regenerative braking reduces wear (Fleet News, 2020). Weight is therefore a second 
+    place where complexity appears, and it plausibly affects chassis and suspension design too.
+  </p>
+  <p class="ex1" id="Analysis_InText4">
+    The battery also shifts where the cost risk lies. A Department of Energy study suggests EV batteries may last 12–15 years in moderate climates
+    and 8–12 years in severe ones, and replacing them can be expensive (U.S. Department of Energy, n.d.). Day-to-day maintenance falls, but the financial
+    risk moves to a single costly component.
+  </p>
+ 
+      
+  
 
 
   
@@ -245,9 +263,12 @@ google.charts.setOnLoadCallback(drawChart);
     const IntroductionCount = displayWordCount('Introduction_InText');
     const AnalysisCount = displayWordCount('Analysis_InText');
     const AnalysisCount1 = displayWordCount('Analysis_InText1');
+    const AnalysisCount2 = displayWordCount('Analysis_InText2');
+    const AnalysisCount3 = displayWordCount('Analysis_InText3');
+    const AnalysisCount4 = displayWordCount('Analysis_InText4');
     
     // Calculate the sum of all selected sections
-    const totalWordCount =IntroductionCount + AnalysisCount + AnalysisCount1;
+    const totalWordCount =IntroductionCount + AnalysisCount + AnalysisCount1 + AnalysisCount2 + AnalysisCount3 + AnalysisCount4;
     // Display the total word count
     document.getElementById("totalWordCount").innerText = `Total word count: ${totalWordCount}`;
   }
