@@ -150,7 +150,8 @@
       var options = {
       title: 'Energy Losses in ICE Vehicles',
         pieSliceText: 'percentage',
-        width: '25%'
+        width: '100%'
+        legend: { position: 'bottom' }
       };
       var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
       chart.draw(data, options);
