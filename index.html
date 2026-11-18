@@ -8,7 +8,10 @@
   <hr>
 
 </head>
-
+<script type="text/javascript">
+google.charts.load(‘current’, { ‘packages’ : [‘corechart’] });
+google.charts.setOnLoadCallback(drawChart);
+  </script>
 <head>
 
 <style>
@@ -200,10 +203,7 @@
 </body>
 <head>
   <div id=”chart_div”></div>
-  <script type="text/javascript">
-google.charts.load(‘current’, { ‘packages’ : [‘corechart’] });
-google.charts.setOnLoadCallback(drawChart);
-  </script>
+  
   </head>
 <!-- //////////////////////////////////////////////////////////////////////////////// -->
   <!-- ////////////////////////////// Adding last update ////////////////////////////// -->
