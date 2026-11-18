@@ -8,10 +8,7 @@
   <hr>
 
 </head>
-<script type="text/javascript">
-google.charts.load(‘current’, { ‘packages’ : [‘corechart’] });
-google.charts.setOnLoadCallback(drawChart);
-  </script>
+<script src="https://www.gstatic.com/charts/loader.js"></script>
 <head>
 
 <style>
@@ -162,7 +159,6 @@ google.charts.setOnLoadCallback(drawChart);
         height: '75%'
       } 
     };
-      };
       var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
       chart.draw(data, options);
       }
